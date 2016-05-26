@@ -117,17 +117,8 @@
 		59173D991CF594F3007965F9 /* Spotlight */ = {
 			isa = PBXGroup;
 			children = (
-				59173D9D1CF594F3007965F9 /* AppDelegate.h */,
-				59173D9E1CF594F3007965F9 /* AppDelegate.m */,
-				59173DA01CF594F3007965F9 /* ViewController.h */,
-				59173DA11CF594F3007965F9 /* ViewController.m */,
-				59173DA31CF594F3007965F9 /* Main.storyboard */,
-				59173DA61CF594F3007965F9 /* Assets.xcassets */,
-				59173DA81CF594F3007965F9 /* LaunchScreen.storyboard */,
-				59173DAB1CF594F3007965F9 /* Info.plist */,
+				59B2EB991CF723CE002A540C /* App */,
 				59173D9A1CF594F3007965F9 /* Supporting Files */,
-				59173DDA1CF59699007965F9 /* LTAnnotationViewController.h */,
-				59173DDB1CF59699007965F9 /* LTAnnotationViewController.m */,
 			);
 			path = Spotlight;
 			sourceTree = "<group>";
@@ -135,6 +126,9 @@
 		59173D9A1CF594F3007965F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59173DA61CF594F3007965F9 /* Assets.xcassets */,
+				59173DA81CF594F3007965F9 /* LaunchScreen.storyboard */,
+				59173DAB1CF594F3007965F9 /* Info.plist */,
 				59173D9B1CF594F3007965F9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -171,6 +165,20 @@
 				59173DD81CF59622007965F9 /* LTSpotlightTransitionController.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		59B2EB991CF723CE002A540C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				59173D9D1CF594F3007965F9 /* AppDelegate.h */,
+				59173D9E1CF594F3007965F9 /* AppDelegate.m */,
+				59173DA01CF594F3007965F9 /* ViewController.h */,
+				59173DA11CF594F3007965F9 /* ViewController.m */,
+				59173DA31CF594F3007965F9 /* Main.storyboard */,
+				59173DDA1CF59699007965F9 /* LTAnnotationViewController.h */,
+				59173DDB1CF59699007965F9 /* LTAnnotationViewController.m */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spotlight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemontree.Spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,6 +472,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spotlight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lemontree.Spotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";

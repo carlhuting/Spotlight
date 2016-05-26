@@ -12,7 +12,7 @@
 #import "LTSpotlight.h"
 
 @interface LTAnnotationViewController ()<LTSpotlightViewControllerDelegate>
-@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *annotationViews;
+@property (nonatomic, strong) IBOutletCollection(UIView) NSArray *annotationViews;
 @property (nonatomic, assign) NSInteger stepIndex;
 @end
 
@@ -34,8 +34,9 @@
             break;
             case 2:
              [self.spotlightView move:[LTSpotlight initRoundedRectSpotlight:CGPointMake(screenSize.width / 2, 42) size:CGSizeMake(120, 40) cornerRadius:6] duration:0.25 moveType:LTSpotlightDisappear];
+            break;
             case 3:
-            [self.spotlightView move:[LTSpotlight initRoundedRectSpotlight:CGPointMake(screenSize.width / 2, 42) size:CGSizeMake(120, 40) cornerRadius:6] duration:0.25 moveType:LTSpotlightDisappear];
+            [self.spotlightView move:[LTSpotlight initOvalSpotlight:CGPointMake(screenSize.width / 2, 200) diameter:220] duration:0.25 moveType:LTSpotlightDisappear];
             break;
           case 4:
             [self dismissViewControllerAnimated:YES completion:^{
@@ -56,6 +57,8 @@
     }];
 }
 
+#pragma mark - LTSpotlightViewControllerDelegate
+
 - (void)spotlightViewControllerWillPresent:
 (LTSpotlightViewController *)viewController
                                   animated:(BOOL)animation {
@@ -68,7 +71,7 @@
 }
 - (void)spotlightViewControllerTapped:
 (LTSpotlightViewController *)viewController
-                             animated:(BOOL)animation {
+                             isInsideSpotlight:(BOOL)isInside {
     [self next:YES];
 }
 

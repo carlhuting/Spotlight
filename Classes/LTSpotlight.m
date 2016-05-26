@@ -78,15 +78,12 @@
   return self;
 }
 
-
 - (UIBezierPath *)path {
   return [UIBezierPath bezierPathWithRoundedRect:self.frame
                                     cornerRadius:self.cornerRadius];
 }
 
 @end
-
-
 
 @implementation LTSpotlight
 
@@ -109,7 +106,7 @@
 }
 
 - (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"<%@ : %p> {frame : %@ } ", NSStringFromClass([self class]), self, NSStringFromCGRect(self.frame)];
+    return [NSString stringWithFormat:@"<%@ : %p> frame : %@  ", NSStringFromClass([self class]), self, NSStringFromCGRect(self.frame)];
 }
 
 + (instancetype)initOvalSpotlight:(CGPoint)center diameter:(CGFloat)radio {

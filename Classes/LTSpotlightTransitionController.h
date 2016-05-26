@@ -11,7 +11,7 @@
 
 @class LTSpotlightTransitionController;
 
-@protocol LTSpotlightTransitionControllerDelegate<NSObject>
+@protocol LTSpotlightTransitionControllerDelegate
 
 - (void)spotlightTransitionWillPresent:(LTSpotlightTransitionController *)controller
              transitionContext:

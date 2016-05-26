@@ -10,11 +10,8 @@
 #import "LTSpotlightView.h"
 #import "LTSpotlightViewController.h"
 
-@interface LTSpotlightViewController () <
-    LTSpotlightTransitionControllerDelegate,
-    UIViewControllerTransitioningDelegate>
-@property(nonatomic, strong)
-    LTSpotlightTransitionController *transitionController;
+@interface LTSpotlightViewController () <LTSpotlightTransitionControllerDelegate, UIViewControllerTransitioningDelegate>
+@property(nonatomic, strong) LTSpotlightTransitionController *transitionController;
 @property(nonatomic, assign) CGFloat alpha;
 @end
 
@@ -52,7 +49,9 @@
 
 - (void)setupSpotlightView:(CGFloat)alpha {
   self.spotlightView = [LTSpotlightView new];
-  self.spotlightView.frame = self.view.bounds;
+    self.spotlightView.frame = [UIScreen mainScreen].bounds;
+    self.spotlightView.translatesAutoresizingMaskIntoConstraints = NO;
+    
   self.spotlightView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:alpha];
     self.spotlightView.userInteractionEnabled = NO;
   [self.view insertSubview:self.spotlightView atIndex:0];
@@ -105,34 +104,35 @@
 
 - (void)viewTapped:(UITapGestureRecognizer *)gesture {
   CGPoint touchPoint = [gesture locationInView:self.spotlightView];
-  // BOOL isInside = [self.spotlightView.spotlight frame];
-  [self.deleage spotlightViewControllerTapped:self animated:YES];
+   BOOL isInside = CGRectContainsPoint([self.spotlightView.spotlight frame], touchPoint);
+  [self.deleage spotlightViewControllerTapped:self isInsideSpotlight:isInside];
 }
+
+
+# pragma mark - LTSpotlightTransitionControllerDelegate
+
+- (void)spotlightTransitionWillPresent:(LTSpotlightTransitionController *)controller
+             transitionContext:
+                 (id<UIViewControllerContextTransitioning>)transitionContext {
+  [self.deleage spotlightViewControllerWillPresent:self
+                                animated:[transitionContext isAnimated]];
+}
+
+- (void)spotlightTransitionWillDismiss:(LTSpotlightTransitionController *)controller
+             transitionContext:
+                 (id<UIViewControllerContextTransitioning>)transitionContext {
+  [self.deleage spotlightViewControllerWillDismiss:self
+                                animated:[transitionContext isAnimated]];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
 
 - (LTSpotlightTransitionController *)transitionController {
-  if (!_transitionController) {
-    _transitionController = [LTSpotlightTransitionController new];
-    _transitionController.delegate = self;
-  }
-  return _transitionController;
-}
-
-- (void)
-spotlightTransitionWillPresent:(LTSpotlightTransitionController *)controller
-             transitionContext:
-                 (id<UIViewControllerContextTransitioning>)transitionContext {
-  [self.deleage
-      spotlightViewControllerWillPresent:self
-                                animated:[transitionContext isAnimated]];
-}
-
-- (void)
-spotlightTransitionWillDismiss:(LTSpotlightTransitionController *)controller
-             transitionContext:
-                 (id<UIViewControllerContextTransitioning>)transitionContext {
-  [self.deleage
-      spotlightViewControllerWillDismiss:self
-                                animated:[transitionContext isAnimated]];
+    if (!_transitionController) {
+        _transitionController = [LTSpotlightTransitionController new];
+        _transitionController.delegate = self;
+    }
+    return _transitionController;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)

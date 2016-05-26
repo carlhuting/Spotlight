@@ -85,25 +85,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appear spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-vX-PtR">
-                                <rect key="frame" x="397" y="84" width="127" height="21"/>
+                                <rect key="frame" x="460" y="84" width="127" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arB-pG-XD5">
-                                <rect key="frame" x="352" y="84" width="113.5" height="21"/>
+                                <rect key="frame" x="446.5" y="84" width="113.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support rounded rect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-Pf-EcX">
-                                <rect key="frame" x="251" y="84" width="165" height="21"/>
+                                <rect key="frame" x="315" y="84" width="165" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAJ-Gq-cjh">
-                                <rect key="frame" x="265" y="210" width="69" height="21"/>
+                                <rect key="frame" x="265" y="185" width="69" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -111,14 +111,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="arB-pG-XD5" secondAttribute="trailing" constant="134" id="AwH-Tu-Spe"/>
-                            <constraint firstItem="QAJ-Gq-cjh" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="190" id="F7j-U3-7nF"/>
+                            <constraint firstAttribute="trailing" secondItem="arB-pG-XD5" secondAttribute="trailing" constant="40" id="AwH-Tu-Spe"/>
+                            <constraint firstItem="QAJ-Gq-cjh" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="165" id="F7j-U3-7nF"/>
                             <constraint firstItem="arB-pG-XD5" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="NpO-KO-Fs7"/>
                             <constraint firstItem="QAJ-Gq-cjh" firstAttribute="centerX" secondItem="oWn-nM-vr6" secondAttribute="centerX" id="Qly-88-cQs"/>
                             <constraint firstItem="QXo-vX-PtR" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="WIT-mU-Xe4"/>
                             <constraint firstItem="hT8-Pf-EcX" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="keW-fd-XIi"/>
-                            <constraint firstAttribute="trailing" secondItem="QXo-vX-PtR" secondAttribute="trailing" constant="76" id="peY-UW-cEd"/>
-                            <constraint firstAttribute="trailing" secondItem="hT8-Pf-EcX" secondAttribute="trailing" constant="184" id="ud5-Ph-bLv"/>
+                            <constraint firstAttribute="trailing" secondItem="QXo-vX-PtR" secondAttribute="trailing" constant="13" id="peY-UW-cEd"/>
+                            <constraint firstAttribute="trailing" secondItem="hT8-Pf-EcX" secondAttribute="trailing" constant="120" id="ud5-Ph-bLv"/>
                         </constraints>
                     </view>
                     <connections>

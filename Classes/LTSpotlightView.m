@@ -9,8 +9,7 @@
 #import "LTSpotlight.h"
 #import "LTSpotlightView.h"
 
-static NSTimeInterval const defaultAnimateDuration = 0.25;
-
+//static NSTimeInterval const defaultAnimateDuration = 0.25;
 
 @interface LTSpotlightView ()
 @property(nonatomic, strong) CAShapeLayer *maskLayer;
@@ -23,7 +22,6 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
     _maskLayer = [CAShapeLayer layer];
     _maskLayer.fillRule = kCAFillRuleEvenOdd;
     _maskLayer.fillColor = [UIColor blackColor].CGColor;
-    
   }
   return _maskLayer;
 }
@@ -53,10 +51,8 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
   self.maskLayer.frame = self.frame;
 }
 
-- (void)appear:(id<LTSpotlightType>)spotlight
-      duration:(NSTimeInterval)duration {
-  CABasicAnimation *animation =
-      [self appearAnimation:duration spotlight:spotlight];
+- (void)appear:(id<LTSpotlight>)spotlight duration:(NSTimeInterval)duration {
+  CABasicAnimation *animation = [self appearAnimation:duration spotlight:spotlight];
   [self.maskLayer addAnimation:animation forKey:nil];
   self.spotlight = spotlight;
 }
@@ -66,13 +62,12 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
   [self.maskLayer addAnimation:animation forKey:nil];
 }
 
-- (void)move:(id<LTSpotlightType>)toSpotlight
+- (void)move:(id<LTSpotlight>)toSpotlight
     duration:(NSTimeInterval)duration
     moveType:(LTSpotlightMoveType)moveType {
   switch (moveType) {
   case LTSpotlightMoveDirect: {
     [self moveDirect:toSpotlight duration:duration];
-
     break;
   }
   case LTSpotlightDisappear: {
@@ -82,15 +77,14 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
   }
 }
 
-- (void)moveDirect:(id<LTSpotlightType>)toSpotlight
+- (void)moveDirect:(id<LTSpotlight>)toSpotlight
           duration:(NSTimeInterval)duration {
-  CABasicAnimation *animation =
-      [self moveAnimation:duration toSpotlight:toSpotlight];
+  CABasicAnimation *animation = [self moveAnimation:duration toSpotlight:toSpotlight];
   [self.maskLayer addAnimation:animation forKey:nil];
   self.spotlight = toSpotlight;
 }
 
-- (void)moveDisappear:(id<LTSpotlightType>)toSpotlight
+- (void)moveDisappear:(id<LTSpotlight>)toSpotlight
              duration:(NSTimeInterval)duration {
   [CATransaction begin];
   [CATransaction setCompletionBlock:^{
@@ -107,8 +101,7 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
   return viewpath;
 }
 
-- (CABasicAnimation *)appearAnimation:(NSTimeInterval)duration
-                            spotlight:(id<LTSpotlightType>)spotlight {
+- (CABasicAnimation *)appearAnimation:(NSTimeInterval)duration spotlight:(id<LTSpotlight>)spotlight {
   UIBezierPath *beginPath = [self maskPath:spotlight.infinitesmalPath];
   UIBezierPath *endPath = [self maskPath:spotlight.path];
   return [self pathAnimation:duration beginPath:beginPath endPath:endPath];
@@ -119,8 +112,7 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
   return [self pathAnimation:duration beginPath:nil endPath:endPath];
 }
 
-- (CABasicAnimation *)moveAnimation:(NSTimeInterval)duration
-                        toSpotlight:(id<LTSpotlightType>)spotlight {
+- (CABasicAnimation *)moveAnimation:(NSTimeInterval)duration toSpotlight:(id<LTSpotlight>)spotlight {
   UIBezierPath *endPath = [self maskPath:spotlight.path];
   return [self pathAnimation:duration beginPath:nil endPath:endPath];
 }
@@ -128,14 +120,13 @@ static NSTimeInterval const defaultAnimateDuration = 0.25;
 - (CABasicAnimation *)pathAnimation:(NSTimeInterval)duration
                           beginPath:(UIBezierPath *)beginPath
                             endPath:(UIBezierPath *)endPath {
-  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:NSStringFromSelector(@selector(path))];
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
   animation.duration = duration;
-  animation.timingFunction =
-      [CAMediaTimingFunction functionWithControlPoints:0.66:0:0.33:1];
+  animation.timingFunction = [CAMediaTimingFunction functionWithControlPoints:0.66:0:0.33:1];
   if (beginPath) {
-    animation.fromValue = beginPath;
+    animation.fromValue = (__bridge id _Nullable)(beginPath.CGPath);
   }
-  animation.toValue = endPath;
+  animation.toValue = (__bridge id _Nullable)(endPath.CGPath);
   animation.removedOnCompletion = NO;
   animation.fillMode = kCAFillModeForwards;
   return animation;

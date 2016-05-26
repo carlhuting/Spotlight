@@ -15,11 +15,8 @@ typedef NS_ENUM(NSUInteger, LTSpotlightMoveType) {
 };
 
 @interface LTSpotlightView : UIView
-@property(nonatomic, strong) id<LTSpotlightType> spotlight;
-- (void)appear:(id<LTSpotlightType>)spotlight
-      duration:(NSTimeInterval)duration;
+@property(nonatomic, strong) id<LTSpotlight> spotlight;
+- (void)appear:(id<LTSpotlight>)spotlight duration:(NSTimeInterval)duration;
 - (void)disappear:(NSTimeInterval)duration;
-- (void)move:(id<LTSpotlightType>)toSpotlight
-    duration:(NSTimeInterval)duration
-    moveType:(LTSpotlightMoveType)moveType;
+- (void)move:(id<LTSpotlight>)toSpotlight duration:(NSTimeInterval)duration moveType:(LTSpotlightMoveType)moveType;
 @end

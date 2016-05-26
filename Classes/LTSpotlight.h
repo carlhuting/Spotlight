@@ -9,19 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol LTSpotlightType
+@protocol LTSpotlight
 @property(nonatomic, assign) CGRect frame;
 @property(nonatomic, assign) CGPoint center;
 @property(nonatomic, strong) UIBezierPath *path;
 @property(nonatomic, strong) UIBezierPath *infinitesmalPath;
 @end
 
-@interface LTSpotlight : NSObject <LTSpotlightType>
+@interface LTSpotlight : NSObject <LTSpotlight>
 - (instancetype)init:(CGRect)frame;
 @property(nonatomic, assign) CGRect frame;
 @property(nonatomic, assign) CGPoint center;
 @property(nonatomic, strong) UIBezierPath *path;
 @property(nonatomic, strong) UIBezierPath *infinitesmalPath;
+
 + (instancetype)initOvalSpotlight:(CGPoint)center diameter:(CGFloat)radio;
 + (instancetype)initRectSpotlight:(CGPoint)center size:(CGSize)size;
 + (instancetype)initRoundedRectSpotlight:(CGPoint)center

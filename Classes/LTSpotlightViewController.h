@@ -11,16 +11,16 @@
 @class LTSpotlightViewController;
 @class LTSpotlightView;
 
-@protocol LTSpotlightViewControllerDelegate <NSObject>
+@protocol LTSpotlightViewControllerDelegate
 - (void)spotlightViewControllerWillPresent:
-            (LTSpotlightViewController *)viewController
+(LTSpotlightViewController *)viewController
                                   animated:(BOOL)animation;
 - (void)spotlightViewControllerWillDismiss:
             (LTSpotlightViewController *)viewController
                                   animated:(BOOL)animation;
 - (void)spotlightViewControllerTapped:
             (LTSpotlightViewController *)viewController
-                             animated:(BOOL)animation;
+                             isInsideSpotlight:(BOOL)isInside;
 @end
 
 @interface LTSpotlightViewController : UIViewController
