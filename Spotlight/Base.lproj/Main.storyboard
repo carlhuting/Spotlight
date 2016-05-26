@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L3a-Kc-7Mi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--Example-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Example" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example" translatesAutoresizingMaskIntoConstraints="NO" id="n2J-p6-3Pm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-B7-Rtv">
+                                <rect key="frame" x="495" y="554" width="89" height="30"/>
+                                <state key="normal" title="Start Tutorial">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTutorialTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0la-yw-17a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="p0i-B7-Rtv" secondAttribute="trailing" constant="16" id="Ey8-OG-5el"/>
+                            <constraint firstAttribute="trailing" secondItem="n2J-p6-3Pm" secondAttribute="trailing" id="Jht-TB-5PO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n2J-p6-3Pm" secondAttribute="bottom" id="STE-jD-LsX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p0i-B7-Rtv" secondAttribute="bottom" constant="16" id="b2m-bh-zdL"/>
+                            <constraint firstItem="n2J-p6-3Pm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ibP-NV-AU8"/>
+                            <constraint firstItem="n2J-p6-3Pm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wii-s6-v8h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Example" id="EbK-eW-jd8">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="46r-Ye-RuY">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="VoL-bd-fS7">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="208"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1KI-f4-uPC">
+            <objects>
+                <navigationController id="L3a-Kc-7Mi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aNM-3f-l04">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="h8z-aj-K7K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tt9-TJ-V0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Annotation View Controller-->
+        <scene sceneID="FKf-gf-2ac">
+            <objects>
+                <viewController storyboardIdentifier="LTAnnotationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qEJ-JF-Gr1" customClass="LTAnnotationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RTZ-UN-Iax"/>
+                        <viewControllerLayoutGuide type="bottom" id="iaF-Zo-UGM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oWn-nM-vr6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appear spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXo-vX-PtR">
+                                <rect key="frame" x="397" y="84" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arB-pG-XD5">
+                                <rect key="frame" x="352" y="84" width="113.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support rounded rect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-Pf-EcX">
+                                <rect key="frame" x="251" y="84" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spotlight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAJ-Gq-cjh">
+                                <rect key="frame" x="265" y="210" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="arB-pG-XD5" secondAttribute="trailing" constant="134" id="AwH-Tu-Spe"/>
+                            <constraint firstItem="QAJ-Gq-cjh" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="190" id="F7j-U3-7nF"/>
+                            <constraint firstItem="arB-pG-XD5" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="NpO-KO-Fs7"/>
+                            <constraint firstItem="QAJ-Gq-cjh" firstAttribute="centerX" secondItem="oWn-nM-vr6" secondAttribute="centerX" id="Qly-88-cQs"/>
+                            <constraint firstItem="QXo-vX-PtR" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="WIT-mU-Xe4"/>
+                            <constraint firstItem="hT8-Pf-EcX" firstAttribute="top" secondItem="RTZ-UN-Iax" secondAttribute="bottom" constant="64" id="keW-fd-XIi"/>
+                            <constraint firstAttribute="trailing" secondItem="QXo-vX-PtR" secondAttribute="trailing" constant="76" id="peY-UW-cEd"/>
+                            <constraint firstAttribute="trailing" secondItem="hT8-Pf-EcX" secondAttribute="trailing" constant="184" id="ud5-Ph-bLv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="annotationViews" destination="QXo-vX-PtR" id="q50-fh-KPb"/>
+                        <outletCollection property="annotationViews" destination="arB-pG-XD5" id="Grb-Wk-KKq"/>
+                        <outletCollection property="annotationViews" destination="hT8-Pf-EcX" id="Jh3-Pb-mu4"/>
+                        <outletCollection property="annotationViews" destination="QAJ-Gq-cjh" id="FIg-se-gTK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n56-fR-huZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="873"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="example" width="469" height="833"/>
+    </resources>
+</document>
